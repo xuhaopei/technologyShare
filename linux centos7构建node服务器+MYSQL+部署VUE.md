@@ -12,9 +12,9 @@ eg:ssh dc2-user@116.85.46.202
 
 ### 1.1在自己的电脑上先下载node.js的安装包
 
-网址：[http://nodejs.cn/download/![img](file:///C:/Users/吴彦祖/AppData/Local/Temp/msohtmlclip1/01/clip_image002.jpg)](http://nodejs.cn/download/)
+网址：[http://nodejs.cn/download/![img](./img/clip_image002.jpg)](http://nodejs.cn/download/)
 
-![img](file:///C:/Users/吴彦祖/AppData/Local/Temp/msohtmlclip1/01/clip_image004.jpg)
+![img](./img/clip_image004.jpg)
 
 ### 1.2将node安装包传输到linux
 
@@ -22,15 +22,15 @@ eg:ssh dc2-user@116.85.46.202
 
 第二步通过FileZilla将window连接到linux centos服务器
 
-![img](file:///C:/Users/吴彦祖/AppData/Local/Temp/msohtmlclip1/01/clip_image006.jpg)
+![img](./img/clip_image006.jpg)
 
 第三步将window的node安装包上传到linux centos上 的用户下面
 
-![img](file:///C:/Users/吴彦祖/AppData/Local/Temp/msohtmlclip1/01/clip_image008.jpg)
+![img](./img/clip_image008.jpg)
 
 ### 1.3通过本地git登录服务器安装node安装包
 
-![img](file:///C:/Users/吴彦祖/AppData/Local/Temp/msohtmlclip1/01/clip_image010.jpg)
+![img](./img/clip_image010.jpg)
 
 切换到存放node安装包的目录下
 
@@ -62,7 +62,7 @@ source /etc/profile
 
 验证
 
-![img](file:///C:/Users/吴彦祖/AppData/Local/Temp/msohtmlclip1/01/clip_image012.jpg)
+![img](./img/clip_image012.jpg)
 
 安装cnpm （很多时候用npm安装其他的插件会失败，用cnpm，当然也有相反情况）
 
@@ -196,12 +196,12 @@ cnpm i (疯狂)
 1、下载并安装官方的 yum repository （新建了mysql文件夹）
 
 wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm
- 
+
 
 2、安装下载过来的文件（yum repository）
 
 yum -y install mysql57-community-release-el7-10.noarch.rpm
- 
+
 
 3、进入正题：yum安装mysql
 
@@ -221,23 +221,23 @@ service mysqld status
 
 出现以下标准则代表启动成功
 
-![img](file:///C:/Users/吴彦祖/AppData/Local/Temp/msohtmlclip1/01/clip_image014.jpg)
+![img](./img/clip_image014.jpg)
 
 6 查看初始密码
 
  grep "password" /var/log/mysqld.log
 
-![img](file:///C:/Users/吴彦祖/AppData/Local/Temp/msohtmlclip1/01/clip_image016.jpg)
+![img](./img/clip_image016.jpg)
 
 7 进入数据库
 
 mysql -uroot -p     这里到-p就行了，回车会提示你输入密码的
 
-![img](file:///C:/Users/吴彦祖/AppData/Local/Temp/msohtmlclip1/01/clip_image018.jpg)
+![img](./img/clip_image018.jpg)
 
 8设置新密码为root
 
-![img](file:///C:/Users/吴彦祖/AppData/Local/Temp/msohtmlclip1/01/clip_image020.jpg)
+![img](./img/clip_image020.jpg)
 
 这里提示我的密码不能满足要求，这里我们可以修改下密码的限制
 
@@ -245,51 +245,51 @@ mysql -uroot -p     这里到-p就行了，回车会提示你输入密码的
 
 设置密码不限制字符类型
 
-![img](file:///C:/Users/吴彦祖/AppData/Local/Temp/msohtmlclip1/01/clip_image022.jpg)
+![img](./img/clip_image022.jpg)
 
 命令set global validate_password_length=1;
 
 设置密码不限制位数
 
-![img](file:///C:/Users/吴彦祖/AppData/Local/Temp/msohtmlclip1/01/clip_image024.jpg)
+![img](./img/clip_image024.jpg)
 
  
 
 ok,现在就可以重新设置新密码了，我这里设置的是root
 
-![img](file:///C:/Users/吴彦祖/AppData/Local/Temp/msohtmlclip1/01/clip_image026.jpg)
+![img](./img/clip_image026.jpg)
 
 设置root账户密码不过期
 
 命令ALTER USER 'root'@'localhost' PASSWORD EXPIRE NEVER;
 
-![img](file:///C:/Users/吴彦祖/AppData/Local/Temp/msohtmlclip1/01/clip_image028.jpg)
+![img](./img/clip_image028.jpg)
 
 9刷新权限
 
 命令flush privileges;
 
-![img](file:///C:/Users/吴彦祖/AppData/Local/Temp/msohtmlclip1/01/clip_image030.jpg)
+![img](./img/clip_image030.jpg)
 
 设置用户 root 可以在任意 IP 下被访问：
 
 命令grant all privileges on *.* to root@"%" identified by "root";
 
-![img](file:///C:/Users/吴彦祖/AppData/Local/Temp/msohtmlclip1/01/clip_image032.jpg)
+![img](./img/clip_image032.jpg)
 
 设置用户 root 可以在本地被访问：
 
 命令*grant all privileges on \*.* to root@"localhost" identified by "new password";*
 
-![img](file:///C:/Users/吴彦祖/AppData/Local/Temp/msohtmlclip1/01/clip_image034.jpg)
+![img](./img/clip_image034.jpg)
 
 刷新权限生效
 
-![img](file:///C:/Users/吴彦祖/AppData/Local/Temp/msohtmlclip1/01/clip_image036.jpg)
+![img](./img/clip_image036.jpg)
 
 退出
 
-![img](file:///C:/Users/吴彦祖/AppData/Local/Temp/msohtmlclip1/01/clip_image038.jpg)
+![img](./img/clip_image038.jpg)
 
 资料来自：
 
@@ -303,15 +303,15 @@ https://www.cnblogs.com/hjw-zq/p/9791596.html
 
 6.1滴滴云下建立可以访问的进入访问的安全组端口3306
 
-![img](file:///C:/Users/吴彦祖/AppData/Local/Temp/msohtmlclip1/01/clip_image040.jpg)
+![img](./img/clip_image040.jpg)
 
-![img](file:///C:/Users/吴彦祖/AppData/Local/Temp/msohtmlclip1/01/clip_image042.jpg)
+![img](./img/clip_image042.jpg)
 
-![img](file:///C:/Users/吴彦祖/AppData/Local/Temp/msohtmlclip1/01/clip_image044.jpg)
+![img](./img/clip_image044.jpg)
 
 6.2本地电脑MYSQL通过SSH连接服务器上的mysql
 
-![img](file:///C:/Users/吴彦祖/AppData/Local/Temp/msohtmlclip1/01/clip_image046.jpg)
+![img](./img/clip_image046.jpg)
 
 ## 7.滴滴云也要允许服务器监听端口进来
 
@@ -319,11 +319,11 @@ https://www.cnblogs.com/hjw-zq/p/9791596.html
 
 滴滴云下建立可以访问的进入访问的安全组端口3000
 
-![img](file:///C:/Users/吴彦祖/AppData/Local/Temp/msohtmlclip1/01/clip_image048.jpg)
+![img](./img/clip_image048.jpg)
 
-![img](file:///C:/Users/吴彦祖/AppData/Local/Temp/msohtmlclip1/01/clip_image049.jpg)
+![img](./img/clip_image049.jpg)
 
-![img](file:///C:/Users/吴彦祖/AppData/Local/Temp/msohtmlclip1/01/clip_image044.jpg)
+![img](./img/clip_image044.jpg)
 
  
 
@@ -347,7 +347,7 @@ mysqldump -u root -p student > d:\student(16240520).txt
 
 再运行student.txt中的sql命令
 
-![img](file:///C:/Users/吴彦祖/AppData/Local/Temp/msohtmlclip1/01/clip_image051.jpg)
+![img](./img/clip_image051.jpg)
 
 ## 9部署VUE
 
@@ -355,13 +355,13 @@ npm run build
 
 打包成dist后，通过filezilla将它放到你的后端程序里面。
 
-![img](file:///C:/Users/吴彦祖/AppData/Local/Temp/msohtmlclip1/01/clip_image052.png)
+![img](./img/clip_image052.png)
 
 cnpm path –save –g
 
 编辑 index.js 修改语句如图所示
 
-![img](file:///C:/Users/吴彦祖/AppData/Local/Temp/msohtmlclip1/01/clip_image054.jpg)
+![img](./img/clip_image054.jpg)
 
 ## 9启动服务器
 
@@ -371,14 +371,18 @@ cnpm path –save –g
 
 node index
 
-![img](file:///C:/Users/吴彦祖/AppData/Local/Temp/msohtmlclip1/01/clip_image056.jpg)
+![img](./img/clip_image056.jpg)
 
 结果：终于成功了！！！！
 
-![img](file:///C:/Users/吴彦祖/AppData/Local/Temp/msohtmlclip1/01/clip_image058.jpg)
+![img](./img/clip_image058.jpg)
 
-## 时间：
+## 更新时间：
 
  
 
 2019/11/27
+
+# 最后：
+
+如果对你们有帮助，烦请点个start啦
